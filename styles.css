@@ -1,0 +1,389 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* VARIAVEIS DE COR */
+:root {
+  --cinza-hover: #95a1a1;
+  /* #acacac9f */
+}
+
+
+body {
+  background-color: #dedede;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.nav {
+  background-color: #cbd7d1;
+  height: 100vh;
+  width: 280px;
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* .minimizado{
+  background-color: #fcfaf8;
+  height: 0;
+  width: 0;
+  display: flex;
+  overflow: hidden;
+
+  .header{
+    width: 0;
+    height: 0;
+  }
+
+  .perfil{
+    width: 0;
+    height: 0;
+  }
+} */
+
+
+/* #F2EFED */
+.header {
+  width: 260px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+.perfil {
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  border-radius: 10px;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+
+  img {
+    margin-left: 10px;
+  }
+}
+
+.perfil:hover {
+  background-color: var(--cinza-hover);
+  transition: background-color 0.7s ease;
+}
+
+.icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: gray;
+  transition: background-color 0.7s ease, color 0.7s ease;
+
+}
+
+.icones:hover {
+  background-color: var(--cinza-hover);
+  color: black;
+}
+
+#icon-aba {
+  font-size: 30px;
+}
+
+.icon-aba{
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  transition: transform 0.5s;
+}
+
+/* ADICIONAR TAREFA */
+.add-task {
+  display: flex;
+  align-items: center;
+}
+
+.btn-add-task {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./src/icon-add-task.png');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  /*COR DE FUNDO TRANSPARENTE */
+
+}
+
+.input-task {
+  border: solid 3px #80b0ab;
+  padding: 5px;
+  border-radius: 13px;
+  width: 200px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+/* FOOTER */
+.footer {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  font-family: "Poppins";
+  font-weight: 600;
+  gap: 5px;
+  border-radius: 5px;
+  color: gray;
+  cursor: pointer;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.footer:hover {
+  color: black;
+  background-color: var(--cinza-hover);
+}
+
+#icon-config {
+  font-size: 15px;
+  margin-left: 10px;
+
+}
+
+/* ---------------- MAIN ----------------- */
+
+.main {
+  width: 100%;
+  padding: 25px;
+  font-family: "Poppins";
+  font-weight: 400;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.container {
+  background-color: #606868;
+  /* #d1d1d1 */
+  max-width: 1000px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 100px auto 0;
+}
+
+.list-task{
+  width: 100%;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.task{
+  background-color: #f2f2f2;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  min-height: 50px;
+  
+  img{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+
+.task:hover img{
+  opacity: 1;
+}
+
+.done{
+  background-color: green;
+  text-decoration: line-through;
+}
+
+/* --------------- RESPONSIVIDADE MOBILE --------------- */
+
+@media (max-width: 700px) {
+  .nav{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  padding: 15px;
+
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    justify-content: space-between; 
+  }
+
+  .main{
+    overflow: hidden;
+    overflow-y: none;
+  }
+
+  .footer {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .icones{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .input-task {
+    border: solid 3px #80b0ab;
+    padding: 5px;
+    border-radius: 13px;
+    max-width: 50%;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+
+  .add-task {
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+  }
+}
+
+/* ------------------------MINIMIZAR A NAV---------------------- */
+
+.minimizado{
+  height: 100vh;
+  width: 55px;
+  overflow: hidden;
+  background-color: #cbd7d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .header{
+    height: 200px;
+    width: 55px;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column-reverse;
+    overflow: hidden;
+
+    .perfil{
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .icones{
+      transform: rotate(180deg);
+      transition: transform 0.5s;
+    }
+  }
+
+  .footer{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-right: 0;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease;
+  }
+
+  p{
+    font-size: 0;
+  }
+
+  .add-task{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+}
